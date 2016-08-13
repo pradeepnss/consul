@@ -1,8 +1,16 @@
 package api
 
 type Node struct {
-	Node    string
-	Address string
+	Node            string
+	Address         string
+	TaggedAddresses map[string]string
+
+	RaftIndex
+}
+
+type RaftIndex struct {
+	CreateIndex uint64
+	ModifyIndex uint64
 }
 
 type CatalogService struct {
